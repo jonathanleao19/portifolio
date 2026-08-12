@@ -9,7 +9,7 @@
 }
 
 :root {
-    /* Paleta de Cores - Azul */
+    /* Paleta de cores - azul */
     --blue-50: #F2F7F7;
     --blue-100: #E2EFF1;
     --blue-200: #C7E0E4;
@@ -21,7 +21,7 @@
     --blue-800: #104B57;
     --blue-900: #0D3D47;
 
-    /* Cores Neutras */
+    /* Cores neutras */
     --gray-200: #E7E5E1;
     --gray-400: #667085;
     --graphite: #1F2933;
@@ -29,7 +29,7 @@
     --white: #FAFAF8;
     --page-bg: #F1F3F5;
 
-    /* Cores de Estado */
+    /* Cores de estado */
     --error: #e63946;
 
     /* Sombras */
@@ -45,7 +45,7 @@
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
 
-    /* Tamanhos de Fonte */
+    /* Tamanhos de fonte */
     --text-sm: 0.75rem;
     --text-base: 1rem;
     --text-lg: 1.25rem;
@@ -53,14 +53,14 @@
     --text-2xl: 2rem;
     --text-3xl: 2.5rem;
 
-    /* Border Radius */
+    /* Bordas arredondadas */
     --radius-sm: 0.25rem;
     --radius-md: 0.5rem;
     --radius-lg: 1rem;
     --radius-xl: 2rem;
     --radius-full: 50%;
 
-    /* Animação Padrão */
+    /* Transição padrão */
     --transition-default: all 0.3s ease;
 }
 
@@ -106,7 +106,7 @@ main {
     transition: var(--transition-default);
 }
 
-/* Botão preenchido (primário) */
+/* Botão primário */
 .botao {
     border-color: #0F5363;
     background-color: #0F5363;
@@ -118,7 +118,7 @@ main {
     background-color: #0B4350;
 }
 
-/* Botão outline (secundário) */
+/* Botão secundário */
 .botao-outline {
     border-color: var(--blue-500);
     background-color: transparent;
@@ -132,7 +132,7 @@ main {
     transform: translateY(-0.25rem);
 }
 
-/* Modificador para botões pequenos (usado em projetos) */
+/* Botões pequenos - projetos */
 .botao.botao-sm,
 .botao-outline.botao-sm {
     min-width: 6rem;
@@ -148,7 +148,7 @@ header {
     z-index: 1000;
     width: 100%;
     height: 5rem;
-    border-bottom: var(--spacing-xs) solid var(--gray-200);
+    border-bottom: 0.25rem solid var(--gray-200);
     background-color: var(--graphite);
     box-shadow: var(--shadow-sm);
 }
@@ -188,11 +188,93 @@ header a:hover {
     padding: var(--spacing-xs);
 }
 
+
+/* =================================================
+   SWITCH DE TEMA
+================================================= */
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: var(--spacing-sm);
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.theme-switch-track {
+    position: relative;
+    display: block;
+
+    width: 3.2rem;
+    height: 1.7rem;
+
+    border-radius: 999px;
+
+    background-color: var(--blue-200);
+
+    transition: background-color 0.3s ease;
+}
+
+.theme-switch-thumb {
+    position: absolute;
+
+    top: 50%;
+    left: 0.2rem;
+
+    width: 1.3rem;
+    height: 1.3rem;
+
+    border-radius: var(--radius-full);
+
+    background-color: var(--graphite);
+
+    transform: translateY(-50%);
+
+    transition:
+        left 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Estado ativo do switch */
+.theme-switch.active .theme-switch-track {
+    background-color: var(--blue-500);
+}
+
+.theme-switch.active .theme-switch-thumb {
+    left: 1.7rem;
+
+    background-color: var(--white);
+}
+
 .hero-container {
+    position: relative;
     display: flex;
     align-items: center;
     gap: var(--spacing-2xl);
     min-height: calc(100vh - 5rem);
+    overflow: hidden;
+}
+
+/* Fundo interativo do Hero */
+#hero-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Mantém o conteúdo acima do fundo interativo */
+.hero-content,
+.hero-image {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -215,7 +297,13 @@ header a:hover {
 .hero-content p,
 .about-content p,
 .contact-info p {
+    max-width: 30rem;
+
+    margin-bottom: var(--spacing-md);
+
     font-size: var(--text-lg);
+    line-height: 1.6;
+
     color: var(--gray-400);
 }
 
@@ -231,7 +319,7 @@ header a:hover {
     border-radius: var(--radius-xl);
 }
 
-/* Animação flutuante */
+/* Animação flutuante da imagem */
 @keyframes float {
 
     0%,
@@ -248,68 +336,295 @@ header a:hover {
     animation: float 3s ease-in-out infinite;
 }
 
-.about-container {
+/* =================================================
+   CONTROLES DO CABEÇALHO
+================================================= */
+
+.header-controls {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: var(--spacing-2xl);
-    margin: var(--spacing-2xl) auto;
-    border-radius: var(--radius-lg);
-    background-color: var(--white);
+    gap: 1.2rem;
 }
 
-.about-image {
-    flex: 0 0 17.5rem;
+.control-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
 }
+
+.control-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--white);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.header-controls .theme-switch {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+/* =================================================
+   ANIMAÇÃO DE ENTRADA DOS TEXTOS DO HERO
+================================================= */
+
+@keyframes textDrop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Saudação */
+.hero-content > span {
+    animation: textDrop 0.8s ease-out both;
+}
+
+/* Título */
+.hero-content > h1 {
+    animation: textDrop 0.8s ease-out 0.20s both;
+}
+
+/* Descrição */
+.hero-content > p {
+    animation: textDrop 0.8s ease-out 0.40s both;
+}
+
+/* =================================================
+   SOBRE MIM
+================================================= */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 18rem 1fr;
+    align-items: center;
+    gap: var(--spacing-2xl);
+
+    margin: var(--spacing-2xl) auto;
+    padding: var(--spacing-xl);
+
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Efeito discreto no card */
+.about-container:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+
+/* =================================================
+   PERFIL
+================================================= */
+
+.about-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0;
+
+    padding-right: var(--spacing-xl);
+    border-right: 1px solid var(--gray-200);
+
+    text-align: center;
+}
+
+/* Foto */
+.about-image {
+    width: 13.5rem;
+    height: 13.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
 
 .about-image img {
     width: 100%;
-    border: 0.35rem solid var(--blue-500);
+    height: 100%;
+
+    border: 0.3rem solid var(--blue-500);
     border-radius: var(--radius-full);
+
+    object-fit: cover;
+
+    box-shadow: var(--shadow-md);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Efeito discreto na foto */
+.about-image img:hover {
+    transform: scale(1.03);
     box-shadow: var(--shadow-lg);
 }
 
-.about-content h2,
-.projects-container h2,
-.contact-info h2 {
-    margin-bottom: var(--spacing-md);
-    font-size: var(--text-3xl);
+
+/* Nome */
+.about-profile h3 {
+    margin-bottom: 0.25rem;
+
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--blue-900);
+}
+
+.about-role {
+    margin-bottom: 0.7%;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-400);
+}
+
+.soft-skills {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.soft-skills h4 {
+    margin-bottom: 0.75rem;
+
+    font-size: var(--text-base);
     font-weight: 700;
     color: var(--blue-800);
 }
 
+
+.soft-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 0.6rem;
+}
+
+
+/* Tags das Soft Skills */
+.soft-skill {
+    padding: 0.5rem 0.8rem;
+
+    border: 1px solid var(--blue-200);
+    border-radius: var(--radius-md);
+
+    background-color: var(--blue-50);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    color: var(--blue-800);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Efeito ao passar o mouse nas Soft Skills */
+.soft-skill:hover {
+    border-color: var(--blue-500);
+    background-color: var(--blue-100);
+    transform: translateY(-2px);
+}
+
+
+/* =================================================
+   CONTEÚDO DO SOBRE
+================================================= */
+
+.about-content {
+    min-width: 0;
+}
+
+
+.about-content h2 {
+    margin-bottom: var(--spacing-md);
+
+    font-size: var(--text-3xl);
+    font-weight: 700;
+
+    color: var(--blue-800);
+}
+
+
 .about-content p {
     margin-bottom: var(--spacing-sm);
+
+    font-size: var(--text-lg);
+
     text-align: justify;
+
+    color: var(--gray-400);
 }
+
+
+/* =================================================
+   BOTÕES E DADOS DO GITHUB
+================================================= */
 
 .about-buttons-data {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     gap: var(--spacing-lg);
+
     margin-top: var(--spacing-lg);
 }
 
-.about-buttons-data .botao {
-    margin-right: auto;
+
+.about-buttons-data .buttons-container {
+    display: flex;
+    gap: var(--spacing-sm);
 }
+
 
 .data-container {
     display: flex;
+    align-items: center;
+
     gap: var(--spacing-lg);
-    margin-top: 0;
 }
+
 
 .data-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    min-width: 5rem;
 }
+
 
 .data-number {
     font-size: var(--text-xl);
     font-weight: 700;
+
     text-align: center;
+
     color: var(--blue-500);
 }
 
@@ -335,36 +650,50 @@ header a:hover {
 .project-card {
     display: flex;
     flex-direction: column;
-    width: 100%;
+
     height: 100%;
-    border: 0.15rem solid var(--gray-200);
+    min-height: 24rem;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
+
     background-color: var(--white);
     box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    transition: var(--transition-default);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.project-card:hover {
-    box-shadow: var(--shadow-lg);
-}
 
+/* Hover do card */
 .project-image {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 10rem;
-    background: linear-gradient(135deg, var(--blue-50) 0%, var(--blue-100) 100%);
+
+    height: 9rem;
+
+    background-color: var(--blue-50);
 }
 
+
 .project-image img {
-    width: 75%;
-    height: 75%;
-    max-width: 7rem;
-    max-height: 7rem;
+    width: 5rem;
+    height: 5rem;
+
     object-fit: contain;
+
     transition: transform 0.3s ease;
+}
+
+
+/* Pequeno destaque no ícone */
+.project-card:hover .project-image img {
+    transform: scale(1.06);
 }
 
 .project-content {
@@ -420,7 +749,7 @@ header a:hover {
     height: auto;
 }
 
-/* Botões do Swiper (navegação) */
+/* Navegação do Swiper */
 .swiper-button-next,
 .swiper-button-prev {
     width: 3rem;
@@ -438,7 +767,7 @@ header a:hover {
     color: var(--blue-800);
 }
 
-/* Indicadores de paginação */
+/* Paginação do Swiper */
 .swiper-pagination-bullet {
     width: 0.75rem;
     height: 0.75rem;
@@ -497,7 +826,7 @@ header a:hover {
             contrast(92%);
 }
 
-/* Formulário */
+/* Formulário de contato */
 form {
     display: flex;
     flex-direction: column;
@@ -539,6 +868,7 @@ form span {
 
 footer {
     padding: 2.5rem;
+    border-top: 0.25rem solid var(--gray-200);
     background: linear-gradient(to right, var(--graphite), var(--blue-700));
     font-weight: 600;
     text-align: center;
@@ -634,20 +964,21 @@ footer {
         font-size: var(--text-xl);
     }
 
-    /* Header - Oculta menu em telas pequenas */
+    /* Cabeçalho - oculta o menu em telas menores */
     @media (max-width: 768px) {
         .menu-list {
             display: none;
         }
     }
 
-    /* Hero */
-    .hero-container {
-        flex-direction: column-reverse;
-        gap: var(--spacing-lg);
-        min-height: 60vh;
-        text-align: center;
-    }
+
+/* Hero */
+.hero-container {
+    flex-direction: column-reverse;
+    gap: var(--spacing-lg);
+    min-height: 60vh;
+    text-align: center;
+}
 
     .hero-content,
     .hero-image {
@@ -671,43 +1002,57 @@ footer {
     }
 
     /* About */
-    .about-container {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        margin: var(--spacing-lg);
-        padding: var(--spacing-lg);
-    }
+.about-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
 
-    .about-image {
-        flex: 0 0 auto;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+    margin: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
 
-    .about-image img {
-        max-width: 16rem;
-        width: 100%;
-    }
 
-    .about-content {
-        width: 100%;
-    }
+.about-profile {
+    padding-right: 0;
+    padding-bottom: var(--spacing-lg);
 
-    .about-buttons-data {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        align-items: stretch;
-    }
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
+}
 
-    .about-buttons-data .botao {
-        margin-right: 0;
-    }
 
-    .data-container {
-        justify-content: center;
-        width: 100%;
-    }
+.about-image {
+    width: 11rem;
+    height: 11rem;
+}
+
+
+.soft-skills {
+    max-width: 32rem;
+}
+
+
+.about-content {
+    width: 100%;
+}
+
+
+.about-buttons-data {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: var(--spacing-md);
+}
+
+
+.about-buttons-data .buttons-container {
+    justify-content: center;
+}
+
+
+.data-container {
+    justify-content: center;
+    width: 100%;
+}
 
     /* Projects */
     .projects-container {
@@ -768,7 +1113,7 @@ footer {
         margin: 0 auto;
     }
 
-    /* Success Page */
+    /* Página de sucesso */
     .success-container {
         padding: var(--spacing-xl) var(--spacing-md);
         min-height: calc(100vh - 10rem);
@@ -872,30 +1217,75 @@ footer {
     }
 
     /* About */
-    .about-container {
-        margin: var(--spacing-lg) 0.5rem;
-        padding: var(--spacing-md);
-    }
+.about-container {
+    margin: var(--spacing-lg) 0.5rem;
+    padding: var(--spacing-md);
+}
 
-    .about-image img {
-        max-width: 14rem;
-    }
 
-    .about-buttons-data .botao,
-    .about-buttons-data .botao-outline {
-        width: 100%;
-        padding: 0.75rem var(--spacing-lg);
-        font-size: var(--text-base);
-        text-align: center;
-    }
+.about-image {
+    width: 9rem;
+    height: 9rem;
+}
 
-    .data-number {
-        font-size: var(--text-lg);
-    }
 
-    .data-label {
-        font-size: var(--text-sm);
-    }
+.about-profile h3 {
+    font-size: var(--text-lg);
+}
+
+
+.about-role {
+    font-size: var(--text-sm);
+}
+
+
+.soft-skills-list {
+    gap: 0.4rem;
+}
+
+
+.soft-skill {
+    padding: 0.35rem 0.6rem;
+    font-size: var(--text-sm);
+}
+
+
+.about-content h2 {
+    text-align: center;
+}
+
+
+.about-content p {
+    font-size: var(--text-base);
+    text-align: left;
+}
+
+
+.about-buttons-data .buttons-container {
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.about-buttons-data .botao,
+.about-buttons-data .botao-outline {
+    width: 100%;
+}
+
+
+.data-container {
+    gap: var(--spacing-md);
+}
+
+
+.data-number {
+    font-size: var(--text-lg);
+}
+
+
+.data-label {
+    font-size: var(--text-sm);
+}
 
     /* Projects */
     .projects-container {
@@ -940,18 +1330,30 @@ footer {
         margin-bottom: var(--spacing-md);
     }
 
-    .social-container {
-        flex-wrap: wrap;
-        gap: var(--spacing-lg);
-        margin-bottom: var(--spacing-xs);
-    }
+.social-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--spacing-lg);
 
-    .social-icon {
-        width: 4rem;
-        height: 4rem;
-    }
+    margin-top: var(--spacing-sm);
+}
+.social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
 
-    /* Formulário */
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+    /* Formulário de contato */
     form {
         gap: var(--spacing-sm);
     }
@@ -977,7 +1379,7 @@ footer {
         font-size: var(--text-sm);
     }
     
-    /* Success Page */
+    /* Página de sucesso */
     .success-container {
         padding: var(--spacing-lg) var(--spacing-sm);
         min-height: calc(100vh - 8rem);
@@ -1005,4 +1407,266 @@ footer {
         padding: 0.75rem var(--spacing-lg);
     }
 
+}
+
+/* =================================================
+ANIMAÇÃO DE ENTRADA - SOBRE MIM
+================================================= */
+
+/* Estado inicial */
+.about-profile,
+.about-content {
+    opacity: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* Perfil começa deslocado para a esquerda */
+.about-profile {
+    transform: translateX(-50px);
+}
+
+/* Conteúdo começa deslocado para a direita */
+.about-content {
+    transform: translateX(50px);
+}
+
+/* Estado final */
+.about-profile.about-visible,
+.about-content.about-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =================================================
+   MODO ESCURO
+================================================= */
+
+[data-theme="dark"] {
+    /* Fundo e textos */
+    --page-bg: #111820;
+    --black: #FAFAF8;
+    --gray-400: #D0D7DE;
+    --gray-200: #2C3945;
+
+    /* Mantém branco como branco para textos e botões */
+    --white: #FAFAF8;
+
+    /* Tons estruturais */
+    --graphite: #0D141B;
+
+    /* Tons de azul adaptados ao fundo escuro */
+    --blue-50: #16242B;
+    --blue-100: #1D3038;
+    --blue-200: #294650;
+    --blue-300: #91BEC6;
+    --blue-400: #6FAAB5;
+    --blue-500: #5796A2;
+    --blue-600: #4A8794;
+    --blue-700: #397581;
+    --blue-800: #91BEC6;
+    --blue-900: #C7E0E4;
+}
+
+
+/* =================================================
+   CABEÇALHO
+================================================= */
+
+[data-theme="dark"] header {
+    background-color: #0D141B;
+    border-bottom-color: #2C3945;
+}
+
+[data-theme="dark"] header a,
+[data-theme="dark"] #titulo {
+    color: #FAFAF8;
+}
+
+[data-theme="dark"] header a:hover {
+    color: var(--blue-300);
+}
+
+
+/* =================================================
+   TEXTOS
+================================================= */
+
+[data-theme="dark"] body,
+[data-theme="dark"] .hero-content span,
+[data-theme="dark"] .hero-content h1,
+[data-theme="dark"] .about-profile h3,
+[data-theme="dark"] .about-content h2,
+[data-theme="dark"] .projects-container h2,
+[data-theme="dark"] .project-content h3,
+[data-theme="dark"] .contact-info h2,
+[data-theme="dark"] form label,
+[data-theme="dark"] .data-number,
+[data-theme="dark"] .soft-skills h4,
+[data-theme="dark"] .success-content h1 {
+    color: #FAFAF8;
+}
+
+
+/* Textos secundários */
+[data-theme="dark"] .hero-content p,
+[data-theme="dark"] .about-content p,
+[data-theme="dark"] .contact-info p,
+[data-theme="dark"] .project-content p,
+[data-theme="dark"] .about-role,
+[data-theme="dark"] .data-label,
+[data-theme="dark"] .success-content h2 {
+    color: #D0D7DE;
+}
+
+
+/* =================================================
+   CARDS
+================================================= */
+
+[data-theme="dark"] .about-container,
+[data-theme="dark"] .project-card {
+    background-color: #1C2732;
+    border-color: #2C3945;
+}
+
+[data-theme="dark"] .project-image {
+    background-color: #16242B;
+}
+
+
+/* =================================================
+   SOFT SKILLS E TAGS
+================================================= */
+
+[data-theme="dark"] .soft-skill,
+[data-theme="dark"] .tag {
+    background-color: #16242B;
+    border-color: #294650;
+    color: #FAFAF8;
+}
+
+[data-theme="dark"] .soft-skill:hover {
+    background-color: #1D3038;
+    border-color: var(--blue-400);
+}
+
+
+/* =================================================
+   BOTÕES
+================================================= */
+
+[data-theme="dark"] .botao {
+    border-color: #176B7A;
+    background-color: #176B7A;
+    color: #FAFAF8;
+}
+
+[data-theme="dark"] .botao:hover {
+    border-color: #155F6D;
+    background-color: #155F6D;
+}
+
+[data-theme="dark"] .botao-outline {
+    border-color: var(--blue-400);
+    background-color: transparent;
+    color: #FAFAF8;
+}
+
+[data-theme="dark"] .botao-outline:hover {
+    border-color: var(--blue-400);
+    background-color: var(--blue-400);
+    color: #0D141B;
+}
+
+
+/* =================================================
+   FORMULÁRIO
+================================================= */
+
+[data-theme="dark"] form input,
+[data-theme="dark"] form textarea {
+    background-color: #162028;
+    border-color: #2C3945;
+    color: #FAFAF8;
+}
+
+[data-theme="dark"] form input::placeholder,
+[data-theme="dark"] form textarea::placeholder {
+    color: #AEB7BF;
+}
+
+[data-theme="dark"] form input::placeholder,
+[data-theme="dark"] form textarea::placeholder {
+    color: #98A4AE;
+}
+
+
+/* =================================================
+   ÍCONES SOCIAIS
+================================================= */
+
+[data-theme="dark"] .social-icon img {
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] .social-icon:hover img {
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(76%)
+        sepia(15%)
+        saturate(719%)
+        hue-rotate(141deg)
+        brightness(92%)
+        contrast(87%);
+}
+
+
+/* Ícone do GitHub nos cards de projetos */
+[data-theme="dark"] .project-image img[src*="github.svg"] {
+    filter: brightness(0) invert(1);
+}
+
+
+/* =================================================
+   SWIPER
+================================================= */
+
+[data-theme="dark"] .swiper-button-next:after,
+[data-theme="dark"] .swiper-button-prev:after {
+    color: var(--blue-300);
+}
+
+[data-theme="dark"] .swiper-pagination-bullet {
+    background-color: #3A4652;
+}
+
+[data-theme="dark"] .swiper-pagination-bullet-active {
+    background-color: var(--blue-400);
+}
+
+
+/* =================================================
+SWITCH DE TEMA
+================================================= */
+
+[data-theme="dark"] .theme-switch-track {
+    background-color: var(--blue-500);
+}
+
+[data-theme="dark"] .theme-switch-thumb {
+    background-color: #FAFAF8;
+}
+
+
+/* =================================================
+RODAPÉ
+================================================= */
+
+[data-theme="dark"] footer {
+    background: var(--page-bg);
+    color: #FAFAF8;
 }

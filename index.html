@@ -28,51 +28,116 @@
 
 <body>
 
-    <!-- Cabeçalho da página -->
-    <header>
-        <div class="menu-content">
-            <a href="index.html" id="titulo">Portfólio</a>
+   <!-- Cabeçalho da página -->
+<header>
+    <div class="menu-content">
 
-            <!-- Menu de Navegação -->
-            <nav>
-                <ul class="menu-list">
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#contact">Contatos</a></li>
-                </ul>
-            </nav>
+        <!-- Título -->
+        <a href="index.html" id="titulo">Portfólio</a>
+
+        <!-- Menu de Navegação -->
+        <nav>
+            <ul class="menu-list">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contatos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Controles do Cabeçalho -->
+        <div class="header-controls">
+
+            <!-- Controle de Áudio -->
+            <div class="control-item">
+
+                <span
+                    class="control-icon"
+                    aria-hidden="true"
+                >
+                    ♪
+                </span>
+
+                <button
+                    id="audio-toggle"
+                    class="theme-switch"
+                    type="button"
+                    aria-label="Ativar música"
+                    aria-pressed="false"
+                    title="Ativar ou desativar música"
+                >
+                    <span class="theme-switch-track">
+                        <span class="theme-switch-thumb"></span>
+                    </span>
+                </button>
+
+            </div>
+
+                        <!-- Controle de Tema -->
+            <div class="control-item">
+
+                <span
+                    class="control-icon"
+                    aria-hidden="true"
+                    title="Modo escuro"
+                >
+                    ☾
+                </span>
+
+                <button
+                    id="theme-toggle"
+                    class="theme-switch"
+                    type="button"
+                    aria-label="Ativar modo escuro"
+                    aria-pressed="false"
+                    title="Ativar ou desativar modo escuro"
+                >
+                    <span class="theme-switch-track">
+                        <span class="theme-switch-thumb"></span>
+                    </span>
+                </button>
+
+            </div>
+
         </div>
-    </header>
+        <!-- Fim dos controles -->
+
+    </div>
+    <!-- Fim do menu-content -->
+
+</header>
 
     <!-- Conteúdo principal da página -->
     <main>
 
-        <!-- Seção Hero -->
-        <section id="hero" class="section-container hero-container">
+<!-- Seção Hero -->
+<section id="hero" class="section-container hero-container">
 
-            <!-- Apresentação -->
-            <article class="hero-content">
-                <span>👋 Olá, eu sou o Jonathan Leão!</span>
+    <!-- Fundo interativo -->
+    <canvas id="hero-background"></canvas>
 
-                <h1>Desenvolvedor Full Stack</h1>
+    <!-- Apresentação -->
+    <article class="hero-content">
+    <span>👋 Olá, eu sou o Jonathan Leão!</span>
 
-                <p>
-                    Aprendendo, criando e transformando desafios em soluções através da tecnologia.
-                </p>
+    <h1>Desenvolvedor Full Stack</h1>
 
-                <div class="buttons-container">
-                    <a href="#contact" class="botao">Entre em contato</a>
-                    <a href="#about" class="botao-outline">Saiba mais...</a>
-                </div>
-            </article>
+    <p>
+        Aprendendo, criando e transformando desafios em soluções através da tecnologia.
+    </p>
 
-            <!-- Imagem do Hero -->
-            <figure class="hero-image">
-                <img src="./assets/img/dev-jonathan.png"
-                    alt="Ilustração de Jonathan Leão desenvolvendo"
-                    class="float-animation">
-            </figure>
+<div class="buttons-container">
+    <a href="#contact" class="botao">Entre em contato</a>
+    <a href="#about" class="botao-outline">Saiba mais...</a>
+</div>
+</article>
+
+<!-- Imagem do Hero -->
+    <figure class="hero-image">
+    <img src="./assets/img/dev-jonathan.png"
+            alt="Ilustração de Jonathan Leão desenvolvendo"
+            class="float-animation">
+    </figure>
 
         </section>
 
@@ -141,14 +206,17 @@
 
             <!-- Informações de contato -->
             <article class="contact-info">
-                <h2>Entre em contato</h2>
+    <h2>Entre em contato</h2>
 
-                <p>Sinta-se à vontade para entrar em contato comigo</p>
+    <p>
+    Tem uma oportunidade, projeto ou ideia ?
+    Sinta-se à vontade para entrar em contato comigo.
+    </p>
 
-                <!-- Redes Sociais -->
-                <div class="social-container">
+    <!-- Redes Sociais -->
+    <div class="social-container">
 
-                    <a href="https://www.linkedin.com/in/jonathan-leao-silva/"
+                    <a href="https://www.linkedin.com/in/jonathanleao/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="social-icon"
@@ -253,9 +321,24 @@
         Desenvolvido por Jonathan Leão - 2026
     </footer>
 
+
+    <!-- Música ambiente -->
+    <audio
+        id="background-audio"
+        preload="metadata"
+        loop
+    >
+        <source
+            src="./assets/audio/portfolio-music.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
     <!-- SWIPER JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- JavaScript -->
     <script src="./assets/js/script.js"></script>
 
 </body>
