@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="author"
+        content="Jonathan Leão"
+    >
+
+    <meta
+        name="description"
+        content="Confirmação de envio de mensagem do portfólio de Jonathan Leão."
+    >
+
+    <meta
+        name="robots"
+        content="noindex, follow"
+    >
+
+
+    <!-- Fonte do Google - Poppins -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="./assets/img/favicon.svg"
+    >
+
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="./assets/css/styles.css"
+    >
+
+
+    <title>
+        Mensagem Enviada | Jonathan Leão
+    </title>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         CABEÇALHO
+    ================================================== -->
+
+    <header>
+
+        <div class="menu-content">
+
+
+            <!-- Título -->
+            <a
+                href="index.html"
+                id="titulo"
+            >
+                Portfólio
+            </a>
+
+
+            <!-- Menu de Navegação -->
+            <nav>
+
+                <ul class="menu-list">
+
+                    <li>
+                        <a href="index.html#hero">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#about">
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#projects">
+                            Projetos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#contact">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Controles do Cabeçalho -->
+            <div class="header-controls">
+
+
+                <!-- Controle de Áudio -->
+                <div class="control-item">
+
+                    <span
+                        class="control-icon"
+                        aria-hidden="true"
+                    >
+                        ♪
+                    </span>
+
+                    <button
+                        id="audio-toggle"
+                        class="theme-switch"
+                        type="button"
+                        aria-label="Ativar música"
+                        aria-pressed="false"
+                        title="Ativar ou desativar música"
+                    >
+
+                        <span class="theme-switch-track">
+
+                            <span class="theme-switch-thumb">
+                            </span>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Controle de Tema -->
+                <div class="control-item">
+
+                    <span
+                        class="control-icon"
+                        aria-hidden="true"
+                        title="Modo escuro"
+                    >
+                        ☾
+                    </span>
+
+                    <button
+                        id="theme-toggle"
+                        class="theme-switch"
+                        type="button"
+                        aria-label="Ativar modo escuro"
+                        aria-pressed="false"
+                        title="Ativar ou desativar modo escuro"
+                    >
+
+                        <span class="theme-switch-track">
+
+                            <span class="theme-switch-thumb">
+                            </span>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         CONTEÚDO PRINCIPAL
+    ================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             MENSAGEM DE SUCESSO
+        ================================================== -->
+
+        <section class="success-container">
+
+            <article class="success-content">
+
+
+                <!-- Ícone de sucesso -->
+                <figure class="success-icon">
+
+                    <img
+                        src="./assets/img/success.svg"
+                        alt="Ilustração de mensagem enviada com sucesso"
+                        class="float-animation"
+                    >
+
+                </figure>
+
+
+                <!-- Título -->
+                <h1>
+                    E-mail enviado com sucesso!
+                </h1>
+
+
+                <!-- Mensagem -->
+                <h2>
+
+                    Obrigado por entrar em contato!
+
+                    <br>
+
+                    Logo mais retornarei sua mensagem.
+
+                </h2>
+
+
+                <!-- Botão para retornar ao portfólio -->
+                <a
+                    href="index.html"
+                    class="botao"
+                >
+                    Voltar para o Início
+                </a>
+
+
+            </article>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         RODAPÉ
+    ================================================== -->
+
+    <footer>
+
+        Desenvolvido por Jonathan Leão - 2026
+
+    </footer>
+
+
+
+    <!-- =================================================
+         MÚSICA AMBIENTE
+    ================================================== -->
+
+    <audio
+        id="background-audio"
+        preload="metadata"
+        loop
+    >
+
+        <source
+            src="./assets/audio/portfolio-music.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="./assets/js/script.js"></script>
+
+
+</body>
+
+</html>

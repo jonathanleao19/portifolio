@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jonathan Leão">
+
+    <meta name="description"
+        content="Portfólio pessoal de Jonathan Leão, Desenvolvedor Full Stack em formação. Conheça meus projetos, habilidades e minha trajetória na área de tecnologia.">
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonte do Google - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+
+    <!-- SWIPER CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <title>Portfólio de Jonathan Leão</title>
+</head>
+
+<body>
+
+   <!-- Cabeçalho da página -->
+<header>
+    <div class="menu-content">
+
+        <!-- Título -->
+        <a href="index.html" id="titulo">Portfólio</a>
+
+        <!-- Menu de Navegação -->
+        <nav>
+            <ul class="menu-list">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contatos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Controles do Cabeçalho -->
+        <div class="header-controls">
+
+            <!-- Controle de Áudio -->
+            <div class="control-item">
+
+                <span
+                    class="control-icon"
+                    aria-hidden="true"
+                >
+                    ♪
+                </span>
+
+                <button
+                    id="audio-toggle"
+                    class="theme-switch"
+                    type="button"
+                    aria-label="Ativar música"
+                    aria-pressed="false"
+                    title="Ativar ou desativar música"
+                >
+                    <span class="theme-switch-track">
+                        <span class="theme-switch-thumb"></span>
+                    </span>
+                </button>
+
+            </div>
+
+                        <!-- Controle de Tema -->
+            <div class="control-item">
+
+                <span
+                    class="control-icon"
+                    aria-hidden="true"
+                    title="Modo escuro"
+                >
+                    ☾
+                </span>
+
+                <button
+                    id="theme-toggle"
+                    class="theme-switch"
+                    type="button"
+                    aria-label="Ativar modo escuro"
+                    aria-pressed="false"
+                    title="Ativar ou desativar modo escuro"
+                >
+                    <span class="theme-switch-track">
+                        <span class="theme-switch-thumb"></span>
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Fim dos controles -->
+
+    </div>
+    <!-- Fim do menu-content -->
+
+</header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+
+<!-- Seção Hero -->
+<section id="hero" class="section-container hero-container">
+
+    <!-- Fundo interativo -->
+    <canvas id="hero-background"></canvas>
+
+    <!-- Apresentação -->
+    <article class="hero-content">
+    <span>👋 Olá, eu sou o Jonathan Leão!</span>
+
+    <h1>Desenvolvedor Full Stack</h1>
+
+    <p>
+        Aprendendo, criando e transformando desafios em soluções através da tecnologia.
+    </p>
+
+<div class="buttons-container">
+    <a href="#contact" class="botao">Entre em contato</a>
+    <a href="#about" class="botao-outline">Saiba mais...</a>
+</div>
+</article>
+
+<!-- Imagem do Hero -->
+    <figure class="hero-image">
+    <img src="./assets/img/dev-jonathan.png"
+            alt="Ilustração de Jonathan Leão desenvolvendo"
+            class="float-animation">
+    </figure>
+
+        </section>
+
+        <!-- Seção Sobre mim -->
+        <section id="about" class="section-container about-container">
+
+        </section>
+
+        <!-- Seção de Projetos -->
+        <section id="projects" class="section-container projects-container">
+            <h2>Meus Projetos</h2>
+
+            <!-- Swiper -->
+            <div class="swiper projects-swiper">
+                <div class="swiper-wrapper">
+
+                    <!-- Projeto -->
+                    <div class="swiper-slide">
+                        <article class="project-card">
+
+                            <!-- Ícone -->
+                            <figure class="project-image">
+                                <img src="./assets/icons/languages/github.svg"
+                                    alt="Ícone do GitHub">
+                            </figure>
+
+                            <!-- Conteúdo -->
+                            <div class="project-content">
+                                <h3>Projeto GitHub</h3>
+
+                                <p>Projeto desenvolvido no GitHub</p>
+
+                                <!-- Tags -->
+                                <div class="project-tags">
+                                    <span class="tag">GitHub</span>
+                                </div>
+
+                                <!-- Botões -->
+                                <div class="project-buttons">
+                                    <a href="https://github.com/jonathanleao"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="botao botao-sm">GitHub</a>
+
+                                    <a href="#"
+                                        class="botao-outline botao-sm">Deploy</a>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+
+                </div>
+
+                <!-- Navegação do Swiper -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Paginação -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Seção de Contatos -->
+        <section id="contact" class="section-container contact-container">
+
+            <!-- Informações de contato -->
+            <article class="contact-info">
+    <h2>Entre em contato</h2>
+
+    <p>
+    Tem uma oportunidade, projeto ou ideia ?
+    Sinta-se à vontade para entrar em contato comigo.
+    </p>
+
+    <!-- Redes Sociais -->
+    <div class="social-container">
+
+                    <a href="https://www.linkedin.com/in/jonathanleao/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-icon"
+                        aria-label="LinkedIn">
+                        <img src="./assets/icons/social/linkedin.svg"
+                            alt="Link para o LinkedIn">
+                    </a>
+
+                    <a href="https://github.com/jonathanleao"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-icon"
+                        aria-label="GitHub">
+                        <img src="./assets/icons/social/github.svg"
+                            alt="Link para o GitHub">
+                    </a>
+
+                </div>
+            </article>
+
+<!-- Formulário de Contato -->
+<form
+    id="formulario"
+    action="https://formsubmit.co/0d8ef567a013d2c1a35bf91ff3f7ee38"
+    method="POST"
+>
+
+    <!-- Redireciona para a página de sucesso após o envio -->
+    <input
+        type="hidden"
+        name="_next"
+        value="http://localhost:5500/success.html"
+    >
+
+    <!-- Desativa o CAPTCHA do FormSubmit -->
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+    >
+
+    <!-- Nome -->
+    <label for="nome">Nome</label>
+    <input
+        id="nome"
+        name="nome"
+        type="text"
+        placeholder="Digite o seu nome completo"
+        autocomplete="name"
+        required
+    >
+    <span id="erro-nome"></span>
+
+    <!-- E-mail -->
+    <label for="email">E-mail</label>
+    <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Digite o seu e-mail"
+        autocomplete="email"
+        required
+    >
+    <span id="erro-email"></span>
+
+    <!-- Assunto -->
+    <label for="assunto">Assunto</label>
+    <input
+        id="assunto"
+        name="assunto"
+        type="text"
+        placeholder="Digite o assunto da mensagem"
+        required
+    >
+    <span id="erro-assunto"></span>
+
+    <!-- Mensagem -->
+    <label for="mensagem">Mensagem</label>
+    <textarea
+        id="mensagem"
+        name="mensagem"
+        placeholder="Digite a sua mensagem"
+        required
+    ></textarea>
+    <span id="erro-mensagem"></span>
+
+    <!-- Botão de envio -->
+    <button
+        class="botao"
+        type="submit"
+    >
+        Enviar Mensagem
+    </button>
+
+</form>
+        </section>
+
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        Desenvolvido por Jonathan Leão - 2026
+    </footer>
+
+
+    <!-- Música ambiente -->
+    <audio
+        id="background-audio"
+        preload="metadata"
+        loop
+    >
+        <source
+            src="./assets/audio/portfolio-music.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
