@@ -114,34 +114,24 @@ async function getAboutGithub() {
                 <h2>Sobre mim</h2>
 
                 <p>
-                    Sou desenvolvedor Full Stack Jr. em formação,
-                    com foco em Java, Spring Boot e desenvolvimento
-                    de aplicações web.
-                </p>
+    Sou Desenvolvedor Full Stack Jr. em formação, com foco em Java,
+    Spring Boot e desenvolvimento de aplicações web.
+</p>
 
-                <p>
-                    Minha trajetória profissional começou fora da
-                    tecnologia e passou por diferentes experiências,
-                    inclusive internacionais. Esse caminho ampliou
-                    minha visão profissional e fortaleceu minha
-                    capacidade de aprender, colaborar e lidar com
-                    novos desafios.
-                </p>
+<p>
+    Minha trajetória profissional começou fora da tecnologia e inclui
+    diferentes experiências, inclusive internacionais. Esse caminho
+    fortaleceu habilidades como comunicação, adaptação, trabalho em
+    equipe e resolução de problemas.
+</p>
 
-                <p>
-                    Hoje direciono essa experiência para o
-                    desenvolvimento de software, construindo projetos
-                    com Java, Spring Boot, MySQL, JavaScript, HTML,
-                    CSS e React, além de utilizar Git e GitHub no
-                    versionamento dos meus projetos.
-                </p>
-
-                <p>
-                    Busco minha primeira oportunidade na área de
-                    tecnologia, onde possa continuar aprendendo,
-                    contribuir com a equipe e transformar conhecimento
-                    em soluções simples e funcionais.
-                </p>
+<p>
+    Hoje aplico essa experiência no desenvolvimento de software,
+    criando projetos com Java, Spring Boot, MySQL, JavaScript, HTML,
+    CSS e React. Busco minha primeira oportunidade na área de tecnologia
+    para continuar aprendendo, contribuir com a equipe e desenvolver
+    soluções simples e funcionais.
+</p>
 
 
                 <!-- Links e dados do GitHub -->

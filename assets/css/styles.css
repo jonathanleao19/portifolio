@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -557,6 +557,7 @@ header a:hover {
 
 .about-content {
     min-width: 0;
+    width: 100%;
 }
 
 
@@ -571,6 +572,9 @@ header a:hover {
 
 
 .about-content p {
+    width: 100%;
+    max-width: none;
+
     margin-bottom: var(--spacing-sm);
 
     font-size: var(--text-lg);
@@ -590,6 +594,7 @@ header a:hover {
     justify-content: space-between;
     align-items: center;
 
+    width: 100%;
     gap: var(--spacing-lg);
 
     margin-top: var(--spacing-lg);
@@ -869,12 +874,11 @@ form span {
 footer {
     padding: 2.5rem;
     border-top: 0.25rem solid var(--gray-200);
-    background: linear-gradient(to right, var(--graphite), var(--blue-700));
+    background: var(--graphite);
     font-weight: 600;
     text-align: center;
     color: var(--white);
 }
-
 .success-container {
     display: flex;
     flex-direction: column;
